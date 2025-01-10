@@ -10,12 +10,6 @@
     "start": "npx prettier -w . && cls && npm run dev"
   },
   "dependencies": {
-    "@codemirror/commands": "^6.8.0",
-    "@codemirror/lang-json": "^6.0.1",
-    "@codemirror/state": "^6.5.1",
-    "@codemirror/view": "^6.36.2",
-    "@tfs-8/basecss": "^0.9.8",
-    "@vercel/analytics": "^1.4.1",
     "vue": "^3.5.13"
   },
   "devDependencies": {
