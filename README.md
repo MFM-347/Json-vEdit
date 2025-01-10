@@ -1,10 +1,10 @@
-# RepoLate
+# JSON VisualEdit
 
-GitHub **Repository Template** for my future projects
+A user-friendly JSON visualization and editing tool that allows you to upload, view, edit, and export JSON data.
 
 ## Contributing
 
-We welcome contributions! Please check the [CONTRIBUTING.md](https://github.com/MFM-347/RepoLate/blob/main/CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please check the [CONTRIBUTING.md](https://github.com/MFM-347/JSON-VisualEdit/blob/main/CONTRIBUTING.md) for guidelines.
 
 ## Credits
 
