@@ -1,6 +1,6 @@
 # JSON VisualEdit
 
-A user-friendly JSON visualization and editing tool that allows you to upload, view, edit, and export JSON data.
+Effortlessly manage your JSON data list with our intuitive visualization and editing tool. Upload your JSON files, explore their structure with interactive views, make real-time edits, and export your data seamlessly—all in one place.
 
 ## Contributing
 
