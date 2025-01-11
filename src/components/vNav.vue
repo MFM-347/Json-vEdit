@@ -1,55 +1,70 @@
 <template>
-  <header
-    class="sticky top-0 z-50 py-2 px-4 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 shadow-sm"
-  >
-    <nav class="container mx-auto w-full flex items-center">
-      <div class="flex gap-2 items-center">
-        <span
-          class="text-xl sm:text-2xl font-extrabold text-primary-600 dark:text-primary-400"
-        >
-          JSON Editor
-        </span>
+  <header class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <RouterLink class="navbar-brand fs-4" to="/">
+        <img src="/logo.svg" class="mb-1" width="24" alt="JsonEditor Logo" />
+        JsonEdit
+      </RouterLink>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+            <RouterLink
+              class="nav-link px-2 fs-5"
+              :class="{ active: route.path === '/' }"
+              to="/"
+            >
+              Home
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              class="nav-link px-2 fs-5"
+              :class="{ active: route.path === '/editor1' }"
+              to="/editor"
+            >
+              Editor
+            </RouterLink>
+          </li>
+        </ul>
+        <div class="text-end">
+          <button type="button" class="btn" @click="dark">
+            <i class="bi bi-moon-fill"></i>
+          </button>
+          <a
+            href="https://github.com/MFM-347/Json-VisualEdit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
       </div>
-      <ul class="flex gap-2 md:gap-4 ml-auto text-xl capitalize items-center">
-        <li>
-          <button
-            @click="toggleTheme"
-            class="px-3 py-1.5 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-            :aria-label="isDark ? 'Enable Light Mode' : 'Enable Dark Mode'"
-          >
-            Dark Mode
-          </button>
-        </li>
-        <li>
-          <button
-            @click="openGithub"
-            class="px-3 py-1.5 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-            aria-label="View Source Code on GitHub"
-          >
-            Github
-          </button>
-        </li>
-      </ul>
-    </nav>
+    </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-const isDark = ref(false);
-const toggleTheme = () => {
-  isDark.value = !isDark.value;
-  localStorage.setItem("dark-mode", isDark.value ? "enabled" : "disabled");
-  document.documentElement.classList.toggle("dark", isDark.value);
-};
-onMounted(() => {
-  const mode = localStorage.getItem("dark-mode");
-  if (mode === "enabled") {
-    isDark.value = true;
-    document.documentElement.classList.add("dark");
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const dark = () => {
+  const html = document.documentElement;
+  if (html.getAttribute("data-bs-theme") === "dark") {
+    html.removeAttribute("data-bs-theme");
+  } else {
+    html.setAttribute("data-bs-theme", "dark");
   }
-});
-const openGithub = () => {
-  window.open("https://github.com/MFM-347/Expense-Tracker", "_blank");
 };
 </script>
