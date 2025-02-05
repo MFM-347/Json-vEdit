@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cgi-bin/
-
-Sitemap: https://json-visual-edit.vercel.app/sitemap.xml

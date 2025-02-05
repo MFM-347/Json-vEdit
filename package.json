@@ -1,23 +1,26 @@
 {
   "name": "app",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "npx prettier -w . && clear && npm run dev"
+    "format": "prettier -w .",
+    "start": "npm run format & clear && npm run dev"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.4.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "vite-plugin-sitemap": "^0.7.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.0.5"
+    "prettier": "^3.4.2",
+    "vite": "^6.0.11",
+    "vite-plugin-vue-devtools": "^7.7.0"
   }
 }

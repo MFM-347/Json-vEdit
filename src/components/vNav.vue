@@ -19,18 +19,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
-            <RouterLink
-              class="nav-link px-2 fs-5"
-              :class="{ active: route.path === '/' }"
-              to="/"
-            >
+            <RouterLink class="nav-link px-2 fs-5" :class="{ active: route.path === '/' }" to="/">
               Home
             </RouterLink>
           </li>
           <li>
             <RouterLink
               class="nav-link px-2 fs-5"
-              :class="{ active: route.path === '/editor1' }"
+              :class="{ active: route.path === '/editor' }"
               to="/editor"
             >
               Editor
@@ -56,15 +52,15 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 const dark = () => {
-  const html = document.documentElement;
-  if (html.getAttribute("data-bs-theme") === "dark") {
-    html.removeAttribute("data-bs-theme");
+  const html = document.documentElement
+  if (html.getAttribute('data-bs-theme') === 'dark') {
+    html.removeAttribute('data-bs-theme')
   } else {
-    html.setAttribute("data-bs-theme", "dark");
+    html.setAttribute('data-bs-theme', 'dark')
   }
-};
+}
 </script>
