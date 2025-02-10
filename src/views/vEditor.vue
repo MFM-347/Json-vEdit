@@ -1,63 +1,73 @@
 <template>
-  <div class="card p-4 shadow-lg rounded">
-    <div class="mb-3">
-      <label class="form-label fw-semibold" for="jsonInput">JSON Input</label>
-      <textarea
-        id="jsonInput"
-        v-model="json"
-        class="form-control"
-        placeholder="Enter JSON data here..."
-        rows="5"
-      ></textarea>
-    </div>
-    <div class="mb-3">
-      <label class="form-label fw-semibold" for="fileUpload">Upload JSON/CSV File</label>
-      <input id="fileUpload" type="file" @change="onFileUpload" class="form-control" />
-    </div>
+  <div class="p-3 p-md-4" data-bs-theme="dark">
+    <div class="container">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="mb-4">
+            <label class="form-label fw-medium h6" for="jsonInput">JSON Input</label>
+            <textarea
+              id="jsonInput"
+              v-model="json"
+              class="form-control"
+              placeholder="Enter JSON data here..."
+              rows="5"
+            ></textarea>
+          </div>
 
-    <div v-if="hasError" class="alert alert-danger mt-3" role="alert">
-      Invalid JSON/CSV format. Please check your input.
-    </div>
+          <div class="mb-4">
+            <label class="form-label fw-medium h6" for="fileUpload">Upload JSON/CSV File</label>
+            <input id="fileUpload" type="file" @change="onFileUpload" class="form-control" />
+          </div>
 
-    <h3 class="text-center fw-bold my-4">Visualize and Edit</h3>
-    <div v-if="parsedData.length" class="table-responsive">
-      <table class="table table-hover table-bordered align-middle">
-        <thead class="table-light">
-          <tr>
-            <th v-for="(value, key) in parsedData[0]" :key="key" class="text-center">
-              {{ key }}
-            </th>
-            <th class="text-center">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, index) in parsedData" :key="index">
-            <td v-for="(value, key) in item" :key="key">
-              <input v-model="item[key]" class="form-control" type="text" />
-            </td>
-            <td class="text-center">
-              <button @click="deleteItem(index)" class="btn btn-danger btn-sm" title="Delete Item">
-                <i class="bi bi-trash3-fill"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div v-else class="text-center mt-4">
-      <p class="text-muted">No data available. Enter JSON/CSV or upload a file to begin.</p>
-    </div>
+          <div v-if="hasError" class="alert alert-danger d-flex align-items-center" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            Invalid JSON/CSV format. Please check your input.
+          </div>
 
-    <div class="mt-4 flex flex-wrap justify-center">
-      <button @click="addItem" class="btn btn-primary mx-2">
-        <i class="bi bi-plus-circle"></i> Add New Item
-      </button>
-      <button @click="exportJSON" class="btn btn-success mx-2 text-white">
-        <i class="bi bi-download"></i> Export JSON
-      </button>
-      <button @click="exportCSV" class="btn btn-warning mx-2">
-        <i class="bi bi-download"></i> Export CSV
-      </button>
+          <h3 class="text-center fw-semibold mb-4">Visualize and Edit</h3>
+
+          <div v-if="parsedData.length" class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th v-for="(value, key) in parsedData[0]" :key="key" class="text-center">
+                    {{ key }}
+                  </th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(item, index) in parsedData" :key="index">
+                  <td v-for="(value, key) in item" :key="key">
+                    <input v-model="item[key]" class="form-control form-control-sm" type="text" />
+                  </td>
+                  <td class="text-center">
+                    <button @click="deleteItem(index)" class="btn btn-danger btn-sm">
+                      <i class="bi bi-trash3-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div v-else class="text-center py-5">
+            <i class="bi bi-file-earmark-text display-1 mb-3"></i>
+            <p class="text-muted">No data available. Enter JSON/CSV or upload a file to begin.</p>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+            <button @click="addItem" class="btn btn-primary">
+              <i class="bi bi-plus-circle me-2"></i> Add New Item
+            </button>
+            <button @click="exportJSON" class="btn btn-success">
+              <i class="bi bi-download me-2"></i> Export JSON
+            </button>
+            <button @click="exportCSV" class="btn btn-warning">
+              <i class="bi bi-download me-2"></i> Export CSV
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -80,11 +90,17 @@ const parseJSON = () => {
 }
 
 const populateEmptyFields = () => {
-  const keys = Object.keys(parsedData.value[0])
+  if (!Array.isArray(parsedData.value) || !parsedData.value.length) return
+  const keys = new Set()
   parsedData.value.forEach((item) => {
+    Object.keys(item).forEach((key) => keys.add(key))
+  })
+  parsedData.value = parsedData.value.map((item) => {
+    let updatedItem = {}
     keys.forEach((key) => {
-      if (!(key in item)) item[key] = ''
+      updatedItem[key] = item[key] !== undefined ? item[key] : ''
     })
+    return updatedItem
   })
 }
 
@@ -159,7 +175,16 @@ watch(json, parseJSON)
 </script>
 
 <style scoped>
-.table thead th {
-  vertical-align: middle;
+.btn {
+  transition: transform 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .table-responsive {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
 }
 </style>

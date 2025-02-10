@@ -4,6 +4,7 @@
     scroll-behavior: smooth;
     scrollbar-color: #d1d5db transparent;
   }
+  [data-bs-theme='dark'] *,
   [data-bs-theme='dark'] {
     scrollbar-color: #374151 transparent;
   }
@@ -18,13 +19,14 @@
     background: #d1d5db;
     border-radius: 4px;
   }
+  [data-bs-theme='dark'] *::-webkit-scrollbar-thumb,
   [data-bs-theme='dark']::-webkit-scrollbar-thumb {
     background: #374151;
   }
   *::-webkit-scrollbar-thumb:hover {
     background: #9ca3af;
   }
-
+  [data-bs-theme='dark'] *::-webkit-scrollbar-thumb:hover,
   [data-bs-theme='dark']::-webkit-scrollbar-thumb:hover {
     background: #4b5563;
   }
