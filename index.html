@@ -6,43 +6,43 @@
     <meta name="author" content="Farhan Madni" />
     <meta name="language" content="English" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="application-name" content="JSON VisualEdit" />
+    <meta name="application-name" content="JSON vEdit" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="JSON VisualEdit" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blue-translucent" />
+    <meta name="apple-mobile-web-app-title" content="JSON vEdit" />
     <meta
       name="description"
-      content="Effortlessly manage your JSON data list with our intuitive visualization and editing tool. Upload your JSON files, explore their structure with interactive views, make real-time edits, and export your data seamlessly—all in one place."
+      content="Effortlessly manage your JSON data list with our json editing tool. You just need to upload your JSON files, explore their structure, make changes, and export your data — all in one place."
     />
     <meta
       name="keywords"
       content="JSON, vue, opensource, visualization, edit JSON, JSON editor, JSON upload, JSON export, file upload, JSON viewer, JSON tool, json editor, jsonedit, web development, JSON management, opensource, Json Visual Edit, JsonVisualEdit, mfm3478"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="JSON VisualEdit - Online JSON Editor" />
+    <meta property="og:title" content="JSON vEdit - Free Online JSON Editor" />
     <meta
       property="og:description"
-      content="Effortlessly manage your JSON data list with our intuitive visualization and editing tool. Upload your JSON files, explore their structure with interactive views, make real-time edits, and export your data seamlessly—all in one place."
+      content="Effortlessly manage your JSON data list with our json editing tool. You just need to upload your JSON files, explore their structure, make changes, and export your data — all in one place."
     />
-    <meta property="og:site_name" content="JSON VisualEdit" />
+    <meta property="og:site_name" content="JSON vEdit" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://json-visual-edit.vercel.app/" />
-    <!-- <meta property="og:image" content="https://json-visual-edit.vercel.app/og-image.webp" /> -->
-    <!-- <meta property="og:image:alt" content="JSON VisualEdit Logo" /> -->
+    <meta property="og:url" content="https://json-v-edit.vercel.app/" />
+    <!-- <meta property="og:image" content="https://json-v-edit.vercel.app/og-image.webp" /> -->
+    <!-- <meta property="og:image:alt" content="JSON vEdit Logo" /> -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JSON VisualEdit - Online JSON Editor" />
+    <meta name="twitter:title" content="JSON vEdit - Free Online JSON Editor" />
     <meta
       name="twitter:description"
-      content="Effortlessly manage your JSON data list with our intuitive visualization and editing tool. Upload your JSON files, explore their structure with interactive views, make real-time edits, and export your data seamlessly—all in one place."
+      content="Effortlessly manage your JSON data list with our json editing tool. You just need to upload your JSON files, explore their structure, make changes, and export your data — all in one place."
     />
-    <!-- <meta name="twitter:image" content="https://json-visual-edit.vercel.app/og-image.webp" /> -->
+    <!-- <meta name="twitter:image" content="https://json-v-edit.vercel.app/og-image.webp" /> -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "JSON VisualEdit",
-        "url": "https://json-visual-edit.vercel.app/",
+        "name": "JSON vEdit",
+        "url": "https://json-v-edit.vercel.app/",
         "author": {
           "@type": "Person",
           "name": "Farhan Madni",
@@ -50,29 +50,48 @@
         },
         "publisher": {
           "@type": "Organization",
-          "name": "JSON VisualEdit",
+          "name": "JSON vEdit",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://json-visual-edit.vercel.app/logo.svg",
+            "url": "https://json-v-edit.vercel.app/logo.svg",
             "width": 512,
             "height": 512
           }
         },
-        "description": "Effortlessly manage your JSON data list with our intuitive visualization and editing tool. Upload your JSON files, explore their structure with interactive views, make real-time edits, and export your data seamlessly—all in one place.",
-        "mainEntityOfPage": "https://json-visual-edit.vercel.app/",
-        // "image": "https://json-visual-edit.vercel.app/og-image.webp",
+        "description": "Effortlessly manage your JSON data list with our json editing tool. You just need to upload your JSON files, explore their structure, make changes, and export your data — all in one place.",
+        "mainEntityOfPage": "https://json-v-edit.vercel.app/",
+        // "image": "https://json-v-edit.vercel.app/og-image.webp",
         "sameAs": [
-          "https://xyzdev.vercel.app",
-          "https://github.com/mfm-347",
+          "https://twitter.com/mfm347",
+          "https://github.com/MFM-347",
           "https://dev.to/mfm-347",
-          "https://codepen.io/mfm-347/"
+          "https://codepen.io/MFM-347/",
+          "https://xyzdev.vercel.app/"
         ]
       }
     </script>
-    <link rel="canonical" href="https://json-visual-edit.vercel.app/" />
-    <title>JSON VisualEdit - Online JSON Editor</title>
-    <meta name="theme-color" content="#385cfa" />
+    <link rel="canonical" href="https://json-v-edit.vercel.app/" />
+    <title>JSON vEdit - Free Online JSON Editor</title>
+    <meta name="theme-color" content="#0063ff" />
     <link rel="icon" href="/logo.svg" />
+    <script type="module">
+      try {
+        if (import.meta.env?.PROD) {
+          const key = import.meta.env.VITE_ANALYTICS_KEY
+          if (key) {
+            const script = document.createElement('script')
+            script.src = 'https://analytics.ahrefs.com/analytics.js'
+            script.async = true
+            script.setAttribute('data-key', key)
+            document.head.appendChild(script)
+          } else {
+            console.warn('KEY is not defined')
+          }
+        }
+      } catch (e) {
+        console.error('Error loading analytics script:', e)
+      }
+    </script>
     <meta name="google-site-verification" content="9C3mmoooLN2NLh5PUEVgr98hTKYWPIarhqp7Efdfwuo" />
   </head>
   <body>

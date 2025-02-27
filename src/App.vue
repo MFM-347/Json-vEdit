@@ -15,14 +15,11 @@ onMounted(() => {
   <div v-if="isLoading" class="lc">
     <h4 class="fw-semibold">Loading...</h4>
   </div>
-  <router-view class="wf" v-slot="{ Component }">
-    <transition
-      name="page"
-      mode="out-in"
-      @before-enter="isLoading = true"
-      @after-enter="isLoading = false"
-    >
-      <component :is="Component" />
+  <router-view v-slot="{ Component }">
+    <transition name="page" mode="out-in">
+      <div>
+        <component :is="Component" />
+      </div>
     </transition>
   </router-view>
 </template>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <RouterLink class="navbar-brand fs-4" to="/">
         <img src="/logo.svg" class="mb-1" width="24" alt="JsonEditor Logo" />
-        JsonEdit
+        Json vEdit
       </RouterLink>
       <button
         class="navbar-toggler"
@@ -30,6 +30,15 @@
               to="/editor"
             >
               Editor
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              class="nav-link px-2 fs-5"
+              :class="{ active: route.path === '/about' }"
+              to="/about"
+            >
+              About
             </RouterLink>
           </li>
         </ul>

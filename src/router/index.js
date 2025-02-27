@@ -12,12 +12,17 @@ const router = createRouter({
     {
       path: '/editor',
       name: 'editor',
-      component: () => import('../views/vEditor.vue'),
+      component: () => import('@/views/vEditor.vue'),
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/vAbout.vue'),
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('../views/v404.vue'),
+      component: () => import('@/views/v404.vue'),
     },
   ],
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 p-md-4" data-bs-theme="dark">
+  <div class="wf p-3 p-md-4" data-bs-theme="dark">
     <div class="container">
       <div class="card shadow-lg">
         <div class="card-body">
