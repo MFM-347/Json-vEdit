@@ -74,24 +74,6 @@
     <title>JSON vEdit - Free Online JSON Editor</title>
     <meta name="theme-color" content="#0063ff" />
     <link rel="icon" href="/logo.svg" />
-    <script type="module">
-      try {
-        if (import.meta.env?.PROD) {
-          const key = import.meta.env.VITE_ANALYTICS_KEY
-          if (key) {
-            const script = document.createElement('script')
-            script.src = 'https://analytics.ahrefs.com/analytics.js'
-            script.async = true
-            script.setAttribute('data-key', key)
-            document.head.appendChild(script)
-          } else {
-            console.warn('KEY is not defined')
-          }
-        }
-      } catch (e) {
-        console.error('Error loading analytics script:', e)
-      }
-    </script>
     <meta name="google-site-verification" content="9C3mmoooLN2NLh5PUEVgr98hTKYWPIarhqp7Efdfwuo" />
   </head>
   <body>
