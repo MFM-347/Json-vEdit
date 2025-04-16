@@ -14,10 +14,15 @@ export default defineConfig({
       hostname: 'https://json-v-edit.vercel.app/',
       changefreq: 'weekly',
       generateRobotsTxt: true,
-      dynamicRoutes: ['/editor', '/about'],
+      // dynamicRoutes: ['/editor', '/about'],
     }),
     pluginPurgeCss({ variables: true }),
   ],
+  ssgOptions: {
+    beastiesOptions: {
+      preload: 'media',
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

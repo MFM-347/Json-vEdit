@@ -67,6 +67,15 @@
   </section>
 </template>
 
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'JSON vEdit - Free Online JSON Editor',
+  meta: [{ property: 'og:title', content: 'JSON vEdit - Free Online JSON Editor' }],
+})
+</script>
+
 <style scoped>
 .hero {
   background: var(--bs-body-tertiary);
