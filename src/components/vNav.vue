@@ -47,7 +47,7 @@
             <i class="bi bi-moon-fill"></i>
           </button>
           <a
-            href="https://github.com/MFM-347/Json-VisualEdit"
+            href="https://github.com/MFM-347/Json-vEdit"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"

@@ -43,13 +43,13 @@ onMounted(() => {
 .lc {
   /*  loading container  */
   position: fixed;
-  background-color: color-mix(in oklab, var(--body-bg) 90%, transparent);
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
-  inset: 0;
+  background-color: color-mix(in oklab, var(--body-bg) 90%, transparent);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  z-index: 50;
+  inset: 0;
 }
 </style>

@@ -26,27 +26,27 @@
   position: relative;
   margin: auto;
   width: clamp(400px, 90%, 500px);
-  min-height: clamp(225px, 250px, 300px);
   height: 275px;
+  min-height: clamp(225px, 250px, 300px);
   max-height: 300px;
   padding: 1rem;
-  border-radius: 1.5rem;
+  overflow: hidden;
   background: #262626;
   border: 1px solid #404040;
-  transition: all 0.3s ease-in-out;
+  border-radius: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.175);
-  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 .contain:hover {
-  transform: scale(1.025);
   border-color: #385cfa;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.025);
 }
 .window-controls {
   position: absolute;
-  display: flex;
   top: 12.5px;
   left: 12.5px;
+  display: flex;
   gap: 8px;
 }
 .dot {
@@ -69,11 +69,11 @@
 }
 .code-block {
   margin-top: 1.5rem;
+  max-height: 12rem;
+  overflow: hidden;
   font-size: clamp(12px, 1.2vw, 14px);
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
-  overflow: hidden;
-  max-height: 12rem;
 }
 .keyword {
   color: #ae63e4;

@@ -68,9 +68,9 @@
   transition: all 250ms ease;
 }
 .img {
+  margin: 0 auto 1rem auto;
   width: 100px;
   display: block;
-  margin: 0 auto 1rem auto;
 }
 .btn-primary {
   background: linear-gradient(120deg, #2563eb, #4f46e5);
@@ -78,21 +78,21 @@
   transition: all 300ms ease;
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
 }
 .icon {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 1.5rem;
+  margin-bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
   background: var(--bs-primary);
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  height: 4rem;
-  width: 4rem;
-  font-size: 2rem;
   border-radius: 0.75rem;
-  margin-bottom: 1rem;
 }
 </style>
