@@ -1,10 +1,10 @@
 <template>
-  <header class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <header class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
-      <RouterLink class="navbar-brand fs-4" to="/">
-        <img src="/logo.svg" class="mb-1" width="24" alt="JsonEditor Logo" />
+      <a class="navbar-brand fs-4" href="/">
+        <img src="/logo.svg" class="mb-1" width="24" height="24" alt="JsonEditor Logo" />
         Json vEdit
-      </RouterLink>
+      </a>
       <button
         class="navbar-toggler"
         type="button"

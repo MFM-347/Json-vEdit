@@ -1,49 +1,54 @@
 <template>
-  <div class="wf">
+  <div class="wf p-4">
     <div class="container">
-      <h1 class="fw-bold">About</h1>
-      <div id="intro">
+      <h1 class="fw-semibold">About</h1>
+      <section id="intro" aria-labelledby="intro-heading" class="mb-4">
+        <h2 id="intro-heading" class="fw-semibold">What This App Does</h2>
         <p>
           Effortlessly edit and convert your JSON/CSV data with our powerful visualization tool.
           Upload, explore, and modify JSON with interactive views. Now with CSV support for more
-          flexibility. Export, Analyze, Edit, Convert all in one place. Best choice for developers
-          and analysts.
+          flexibility. Export, Analyze, Edit, Convert — all in one place. The best choice for
+          developers and analysts.
         </p>
-      </div>
-      <div id="about-author">
-        <h2 class="fw-semibold">About the Author</h2>
+      </section>
+
+      <section id="about-author" aria-labelledby="author-heading" class="mb-4">
+        <h2 id="author-heading" class="fw-semibold">About the Author</h2>
         <p>
           This app was created by
           <a
-            href="https://github.com/mfm-347"
+            href="https://github.com/MFM-347"
             class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
             target="_blank"
-            >Farhan Madni</a
-          >, an open-source contributor, Vue.js frontend developer and interested in developing
-          intuitive and high performing web applications.
+            rel="noopener noreferrer"
+          >
+            Farhan Madni </a
+          >, an open-source contributor and Vue.js frontend developer passionate about building
+          intuitive, high-performance web applications.
         </p>
-      </div>
-      <div id="powered-by">
-        <h2 class="fw-semibold">Empowered By</h2>
+      </section>
+
+      <section id="powered-by" aria-labelledby="powered-heading">
+        <h2 id="powered-heading" class="fw-semibold">Empowered By</h2>
         <ul>
           <li>
-            <b>Vite.js</b> – A lightning fast next generation build tool that empowers the
-            development experience with instant hot module replacement.
+            <strong>Vite.js</strong> – A lightning-fast, next-generation build tool that enhances
+            the development experience with instant hot module replacement.
           </li>
           <li>
-            <b>Vue.js</b> – A progressive JavaScript framework dedicated for building dynamic and
-            reactive user interfaces.
+            <strong>Vue.js</strong> – A progressive JavaScript framework dedicated to building
+            dynamic and reactive user interfaces.
           </li>
           <li>
-            <b>Bootstrap</b> – A powerful CSS framework that makes the UI responsive and visually
-            appealing.
+            <strong>Bootstrap</strong> – A robust CSS framework that helps create responsive and
+            visually appealing UIs.
           </li>
           <li>
-            <b>Bootstrap Icons</b> – A set of modern icons that can be combined with Bootstrap for
-            building enhanced UI elements.
+            <strong>Bootstrap Icons</strong> – A collection of modern icons to complement
+            Bootstrap-based UI elements.
           </li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 </template>

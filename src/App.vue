@@ -1,55 +1,45 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import vNav from './components/vNav.vue'
-
-const isLoading = ref(true)
-onMounted(() => {
-  setTimeout(() => {
-    isLoading.value = false
-  }, 500)
-})
 </script>
 
 <template>
-  <vNav />
-  <div v-if="isLoading" class="lc">
-    <h4 class="fw-semibold">Loading...</h4>
+  <a href="#main" class="stm" tabindex="0">Skip to content</a>
+  <div>
+    <vNav />
+    <main id="main" role="main">
+      <routerView />
+    </main>
   </div>
-  <router-view v-slot="{ Component }">
-    <transition name="page" mode="out-in">
-      <div>
-        <component :is="Component" />
-      </div>
-    </transition>
-  </router-view>
 </template>
-<style>
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.3s ease;
+<style scoped>
+.stm {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
 }
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-.loading-enter-active,
-.loading-leave-active {
-  transition: opacity 0.5s ease;
-}
-.loading-enter-from,
-.loading-leave-to {
-  opacity: 0;
-}
-.lc {
-  /*  loading container  */
-  position: fixed;
+.stm:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: color-mix(in oklab, var(--body-bg) 90%, transparent);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  inset: 0;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  color: #000;
+  white-space: normal;
+  background-color: #f3f4f6;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  clip: auto;
+  clip-path: none;
 }
 </style>
