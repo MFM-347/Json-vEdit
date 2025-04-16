@@ -1,7 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/prettierrc",
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "es5",
+  "tabWidth": 2,
   "printWidth": 100,
-  "arrowParens": "always"
+  "plugins": ["@nirtamir2/prettier-plugin-css-order"]
 }
