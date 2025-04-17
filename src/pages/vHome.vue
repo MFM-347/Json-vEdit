@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row min-vh-100 align-items-center">
         <div class="col-12 text-center">
-          <img class="img" src="/logo.svg" loading="lazy" alt="Logo for JSON vEdit application" />
+          <vLogo :size="100" cla="img" />
           <h1 class="display-4 fw-bold mb-4">JSON vEdit</h1>
           <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">
@@ -68,6 +68,7 @@
 </template>
 
 <script setup>
+import vLogo from '@/components/vLogo.vue'
 import { useHead } from '@unhead/vue'
 
 useHead({
@@ -83,7 +84,6 @@ useHead({
 }
 .img {
   margin: 0 auto 1rem auto;
-  width: 100px;
   display: block;
 }
 .btn-primary {

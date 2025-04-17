@@ -7,11 +7,7 @@ import pluginPurgeCss from '@myelophone/vite-plugin-purgecss'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-    pluginPurgeCss({ variables: true }),
-  ],
+  plugins: [vue(), vueDevTools(), pluginPurgeCss({ variables: true })],
   ssgOptions: {
     beastiesOptions: {
       preload: 'media',
@@ -21,9 +17,9 @@ export default defineConfig({
     formatting: 'minify',
     onFinished() {
       generateSitemap({
-      hostname: 'https://json-v-edit.vercel.app/',
-      changefreq: 'weekly',
-      generateRobotsTxt: true,
+        hostname: 'https://json-v-edit.vercel.app/',
+        changefreq: 'weekly',
+        generateRobotsTxt: true,
       })
     },
   },

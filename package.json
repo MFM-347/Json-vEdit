@@ -12,7 +12,8 @@
     "start": "npm run format && clear && npm run dev"
   },
   "dependencies": {
-    "@unhead/vue": "^2.0.7",
+    "@unhead/dom": "^2.0.8",
+    "@unhead/vue": "^2.0.8",
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "vue": "^3.5.13",

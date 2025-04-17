@@ -2,7 +2,7 @@
   <header class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand fs-4" href="/">
-        <img src="/logo.svg" class="mb-1" width="24" height="24" alt="JsonEditor Logo" />
+        <vLogo class="mb-1" />
         Json vEdit
       </a>
       <button
@@ -61,6 +61,7 @@
 </template>
 
 <script setup>
+import vLogo from '@/components/vLogo.vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
