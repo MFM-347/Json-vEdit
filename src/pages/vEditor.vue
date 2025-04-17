@@ -90,6 +90,12 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Editor - JSON vEdit',
+  meta: [{ property: 'og:title', content: 'JSON vEdit - Free Online JSON Editor' }],
+})
 
 const json = ref('')
 const fileName = ref('')

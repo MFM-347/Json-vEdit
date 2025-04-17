@@ -52,3 +52,12 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'About - JSON vEdit',
+  meta: [{ property: 'og:title', content: 'About - JSON vEdit' }],
+})
+</script>

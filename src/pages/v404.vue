@@ -17,6 +17,15 @@
   </div>
 </template>
 
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: '404 - Page not found',
+  meta: [{ property: 'og:title', content: '404 - Page not found' }],
+})
+</script>
+
 <style scoped>
 .a {
   display: grid;

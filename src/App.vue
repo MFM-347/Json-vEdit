@@ -1,5 +1,12 @@
 <script setup>
+import { onMounted } from 'vue'
 import vNav from './components/vNav.vue'
+
+onMounted(async () => {
+  if (typeof document !== 'undefined') {
+    await import('bootstrap/dist/js/bootstrap.bundle.min.js')
+  }
+})
 </script>
 
 <template>
