@@ -150,8 +150,8 @@ const exportPDF = () => {
   const doc = new jsPDF()
   const headers = [Object.keys(parsedData.value[0])]
   const data = parsedData.value.map((row) => Object.values(row))
-  doc.text('Data Export', 14, 20)
-  doc.autoTable({
+  doc.text('Created with JSON vEdit', 14, 20)
+  autoTable(doc, {
     head: headers,
     body: data,
     startY: 30,
