@@ -69,11 +69,12 @@
 
 <script setup>
 import vLogo from '@/components/vLogo.vue'
-import { useHead } from '@unhead/vue'
+import { useSeoMeta } from '@unhead/vue'
 
-useHead({
+useSeoMeta({
   title: 'JSON vEdit - Free Online JSON Editor',
-  meta: [{ property: 'og:title', content: 'JSON vEdit - Free Online JSON Editor' }],
+  ogTitle: 'JSON vEdit - Free Online JSON Editor',
+  twitterTitle: 'JSON vEdit - Free Online JSON Editor'
 })
 </script>
 

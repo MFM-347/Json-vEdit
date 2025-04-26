@@ -90,11 +90,12 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useHead } from '@unhead/vue'
+import { useSeoMeta } from '@unhead/vue'
 
-useHead({
+useSeoMeta({
   title: 'Editor - JSON vEdit',
-  meta: [{ property: 'og:title', content: 'JSON vEdit - Free Online JSON Editor' }],
+  ogTitle: 'Editor - JSON vEdit',
+  twitterTitle: 'Editor - JSON vEdit'
 })
 
 const json = ref('')

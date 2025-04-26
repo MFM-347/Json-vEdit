@@ -54,10 +54,11 @@
 </template>
 
 <script setup>
-import { useHead } from '@unhead/vue'
+import { useSeoMeta } from '@unhead/vue'
 
-useHead({
+useSeoMeta({
   title: 'About - JSON vEdit',
-  meta: [{ property: 'og:title', content: 'About - JSON vEdit' }],
+  ogTitle: 'About - JSON vEdit',
+  twitterTitle: 'About - JSON vEdit'
 })
 </script>
