@@ -74,7 +74,7 @@ import { useSeoMeta } from '@unhead/vue'
 useSeoMeta({
   title: 'JSON vEdit - Free Online JSON Editor',
   ogTitle: 'JSON vEdit - Free Online JSON Editor',
-  twitterTitle: 'JSON vEdit - Free Online JSON Editor'
+  twitterTitle: 'JSON vEdit - Free Online JSON Editor',
 })
 </script>
 

@@ -95,7 +95,7 @@ import { useSeoMeta } from '@unhead/vue'
 useSeoMeta({
   title: 'Editor - JSON vEdit',
   ogTitle: 'Editor - JSON vEdit',
-  twitterTitle: 'Editor - JSON vEdit'
+  twitterTitle: 'Editor - JSON vEdit',
 })
 
 const json = ref('')
