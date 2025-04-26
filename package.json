@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
-    "build2": "vite build",
     "preview": "vite preview",
-    "format": "prettier -w .",
+    "format": "prettier -w src",
     "start": "npm run format && clear && npm run dev"
   },
   "dependencies": {

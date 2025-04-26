@@ -35,6 +35,15 @@
           <li>
             <RouterLink
               class="nav-link px-2 fs-5"
+              :class="{ active: route.path === '/export' }"
+              to="/export"
+            >
+              Export
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              class="nav-link px-2 fs-5"
               :class="{ active: route.path === '/about' }"
               to="/about"
             >

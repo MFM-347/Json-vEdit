@@ -18,6 +18,11 @@ export const createApp = ViteSSG(App, {
       component: () => import('@/pages/vEditor.vue'),
     },
     {
+      path: '/export',
+      name: 'export',
+      component: () => import('@/pages/vExport.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('@/pages/vAbout.vue'),
