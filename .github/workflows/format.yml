@@ -1,0 +1,52 @@
+name: Lint/Format
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Format
+        run: pnpm exec prettier -w **/*.md **/*.json **/*.json *.js **/*.ts **/*.vue **/*.css
+
+      - name: Commit and Push
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(format): auto-format files"
+            git pull --rebase
+            git push
+          fi
