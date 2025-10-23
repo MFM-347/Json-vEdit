@@ -35,7 +35,7 @@ jobs:
         run: pnpm run lint
 
       - name: Format
-        run: pnpm exec prettier -w **/*.md **/*.json **/*.json *.js **/*.ts **/*.vue **/*.css
+        run: pnpm run format
 
       - name: Commit and Push
         if: github.ref == 'refs/heads/main'

@@ -7,7 +7,9 @@
     "nightwatch.conf.*",
     "playwright.config.*",
     "eslint.config.*",
-    "src/typed-router.d.ts"
+    "src/typed-router.d.ts",
+    "src/auto-imports.d.ts",
+    "src/components.d.ts"
   ],
   "compilerOptions": {
     "noEmit": true,
