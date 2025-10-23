@@ -4,36 +4,6 @@ import { defineConfig } from 'unocss'
 export default defineConfig({
   presets: [presetWind4()],
 
-  rules: [
-    [
-      /^tr-(\d+(?:ms|s)?)$/,
-      ([, d]) => {
-        let value = 0
-        if (d.endsWith('s') && !d.endsWith('ms')) {
-          value = parseFloat(d) * 1000
-        } else {
-          value = parseFloat(d)
-        }
-
-        const base = `${value * 0.96}ms`
-        const reduced = `${value * 0.72}ms`
-
-        return [
-          {
-            'transition-duration': base,
-            'transition-property':
-              'color, background-color, border-color, outline-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, backdrop-filter, display',
-            'transition-timing-function': 'ease',
-          },
-          {
-            'transition-duration': reduced,
-            '@media (prefers-reduced-motion: reduce)': '',
-          },
-        ]
-      },
-    ],
-  ],
-
   theme: {
     colors: {
       background: { subtle: 'var(--background-subtle)', DEFAULT: 'var(--background)' },
@@ -75,7 +45,7 @@ export default defineConfig({
     ],
     [
       'btn',
-      "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium tr-240 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] h-9 px-4 py-2 has-[>svg]:px-3",
+      "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] h-9 px-4 py-2 has-[>svg]:px-3",
     ],
     ['btn-primary', 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90'],
     ['btn-secondary', 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80'],

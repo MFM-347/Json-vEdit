@@ -49,9 +49,13 @@
 }
 
 * {
+  transition-duration: 270ms;
+  transition-property:
+    color, background-color, border-color, outline-color, fill, stroke, opacity, box-shadow,
+    transform, translate, scale, rotate, backdrop-filter, display;
+  transition-timing-function: ease-out;
   outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
   border-color: var(--border);
-  transition: all 270ms ease-out;
 }
 
 body {
