@@ -1,9 +1,7 @@
 {
   "name": "vue-app",
-  "type": "module",
-  "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@10.17.1",
+  "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
@@ -15,42 +13,46 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier -w *.ts src",
-    "start": "pnpm lint && pnpm format && cls && pnpm dev"
+    "start": "pnpm lint && pnpm format && clear && pnpm dev"
   },
   "dependencies": {
-    "@unhead/vue": "^2.0.17",
-    "@unocss/preset-icons": "latest",
-    "@unocss/preset-wind4": "latest",
-    "@vueuse/core": "latest",
+    "@unhead/vue": "^2.0.19",
+    "@vueuse/core": "^14.0.0",
     "jspdf": "^3.0.3",
     "jspdf-autotable": "^5.0.2",
-    "unocss": "latest",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "unocss": "66.5.4",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@iconify-json/uil": "^1.2.3",
-    "@nirtamir2/prettier-plugin-css-order": "^0.0.1",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.16.5",
-    "@unocss/eslint-config": "^66.5.2",
-    "@unocss/eslint-plugin": "^66.5.2",
+    "@unocss/eslint-config": "latest",
+    "@unocss/eslint-plugin": "latest",
+    "@unocss/preset-wind4": "^66.5.4",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.36.0",
-    "eslint-plugin-vue": "^10.5.0",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint": "^9.38.0",
+    "eslint-plugin-vue": "^10.5.1",
     "fontless": "^0.0.2",
-    "jiti": "^2.6.0",
+    "jiti": "^2.6.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
-    "typescript": "~5.8.0",
-    "unplugin-vue-router": "^0.15.0",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "typescript": "~5.9.0",
+    "unplugin-auto-import": "^20.2.0",
+    "unplugin-icons": "^22.5.0",
+    "unplugin-vue-components": "^30.0.0",
+    "unplugin-vue-router": "^0.16.0",
     "vite": "npm:rolldown-vite@latest",
-    "vite-plugin-vue-devtools": "^8.0.0",
-    "vite-ssg": "^28.1.0",
+    "vite-plugin-vue-devtools": "^8.0.3",
+    "vite-ssg": "^28.2.2",
     "vite-ssg-sitemap": "^0.10.0",
-    "vue-tsc": "^3.0.4"
-  }
+    "vue-tsc": "^3.1.1"
+  },
+  "packageManager": "pnpm@10.19.0"
 }
