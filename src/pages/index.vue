@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useSeoMeta } from '@unhead/vue'
-import VLogo from '@/components/VLogo.vue'
-
 useSeoMeta({
   title: 'JSON vEdit - Free Online JSON Editor',
   description:
@@ -16,32 +13,32 @@ useSeoMeta({
 
 const features = [
   {
-    icon: 'i-uil-tachometer-fast-alt',
+    icon: 'UilTachometerFastAlt',
     title: 'Lightning Fast',
     text: 'Optimized for performance with fast loading and minimal memory usage.',
   },
   {
-    icon: 'i-uil-box',
+    icon: 'UilBox',
     title: 'Minimal UI',
     text: 'A clean, distraction-free interface that works for pros and newcomers alike.',
   },
   {
-    icon: 'i-uil-code',
+    icon: 'UilCode',
     title: 'Bracket Free',
     text: 'Focus on your data while JSON vEdit takes care of the structure.',
   },
   {
-    icon: 'i-uil-exchange',
+    icon: 'UilExchange',
     title: 'CSV Ready',
     text: 'Import and export CSV seamlessly for flexible workflows.',
   },
   {
-    icon: 'i-uil-cloud-upload',
+    icon: 'UilCloudUpload',
     title: 'Secure & Local',
     text: 'All editing happens in your browser—no data leaves your device.',
   },
   {
-    icon: 'i-uil-paint-tool',
+    icon: 'UilPaintTool',
     title: 'UnoCSS Powered',
     text: 'Instant styling with dark mode support out of the box.',
   },
@@ -51,7 +48,7 @@ const features = [
 <template>
   <section id="hero" class="container">
     <div class="py-12 text-center flex flex-col gap-6 min-h-screen items-center justify-center">
-      <VLogo :size="100" class="mb-4" />
+      <VLogo class="mb-4" :size="100" />
       <h1 class="title">JSON vEdit</h1>
       <p class="text-base leading-7 mt-4 sm:text-lg">
         Effortlessly manage and edit your JSON data with our powerful visualization tool. Upload,
@@ -65,13 +62,13 @@ const features = [
         analysts.
       </p>
       <RouterLink
+        class="btn-primary font-semibold mt-6 px-5 py-2.5 rounded-lg bg-primary inline-flex gap-2 transition items-center"
         to="/editor"
-        class="text-primary-foreground font-semibold mt-6 px-6 py-3 rounded-lg bg-primary inline-flex gap-2 transition items-center hover:bg-primary/90"
         role="button"
         aria-label="Launch JSON Editor"
       >
         Launch Editor
-        <span class="i-uil-arrow-right text-lg" />
+        <UilArrowRight class="text-lg" />
       </RouterLink>
     </div>
   </section>
@@ -80,12 +77,12 @@ const features = [
       <h2 class="text-3xl font-bold mb-12 text-center">Features</h2>
       <div class="gap-4 grid lg:grid-cols-3 sm:grid-cols-2">
         <section
-          :key="i"
           v-for="(feat, i) in features"
+          :key="i"
           class="p-4 text-center border rounded-xl flex flex-col gap-2 shadow-xs items-center"
         >
           <div class="rounded-lg bg-accent grid h-20 w-20 place-items-center">
-            <span :class="[feat.icon, 'text-primary size-12 hover:size-16']" />
+            <component :is="feat.icon" class="text-primary size-12 hover:size-16" />
           </div>
           <h3 class="text-xl font-semibold">
             {{ feat.title }}
@@ -103,9 +100,9 @@ const features = [
       Start editing right now—no sign-up required. Drag and drop your JSON or CSV and watch it come
       alive.
     </p>
-    <RouterLink to="/editor" class="btn btn-primary">
+    <RouterLink class="btn btn-primary" to="/editor">
       Launch Editor
-      <span class="i-uil-arrow-right text-lg"></span>
+      <UilArrowRight class="size-5" />
     </RouterLink>
   </section>
 </template>

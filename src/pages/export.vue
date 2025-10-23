@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import { watch } from 'vue'
-import { useSeoMeta } from '@unhead/vue'
 import { jsPDF } from 'jspdf'
 import autoTable from 'jspdf-autotable'
-import { json, parsedData, hasError, parseJSON, onFileUpload } from '@/utils'
 
 useSeoMeta({
   title: 'Viewer / Export – JSON vEdit',
@@ -113,13 +110,13 @@ watch(json, parseJSON)
       <label class="font-medium mb-3 block" for="fileUpload">Upload a JSON/CSV File</label>
       <input
         id="fileUpload"
+        class="sr-only"
         type="file"
         accept=".json,.csv"
-        class="sr-only"
         @change="onFileUpload"
       />
-      <label for="fileUpload" class="btn btn-primary">
-        <span class="i-uil-upload mr-1"></span>
+      <label class="btn btn-primary" for="fileUpload">
+        <UilUpload class="mr-1" />
         Choose File
       </label>
       <p id="fileHelp" class="text-sm text-muted-foreground mt-2">
@@ -140,14 +137,14 @@ watch(json, parseJSON)
       <div
         class="mx-auto bg-background-subtle flex flex-row gap-1 w-fit top-0 sticky z-10 backdrop-blur-sm"
       >
-        <button class="btn btn-ghost" @click="exportJSON" aria-label="Export data as JSON">
-          <span class="i-uil-download-alt mr-1"></span> Download JSON
+        <button class="btn btn-ghost" aria-label="Export data as JSON" @click="exportJSON">
+          <UilDownloadAlt class="mr-1" /> Download JSON
         </button>
-        <button class="btn btn-ghost" @click="exportCSV" aria-label="Export data as CSV">
-          <span class="i-uil-download-alt mr-1"></span> Download CSV
+        <button class="btn btn-ghost" aria-label="Export data as CSV" @click="exportCSV">
+          <UilDownloadAlt class="mr-1" /> Download CSV
         </button>
-        <button class="btn btn-ghost" @click="exportPDF" aria-label="Export data as PDF">
-          <span class="i-uil-file-alt mr-1"></span> Download PDF
+        <button class="btn btn-ghost" aria-label="Export data as PDF" @click="exportPDF">
+          <UilFileAlt class="mr-1" /> Download PDF
         </button>
       </div>
 
@@ -176,7 +173,7 @@ watch(json, parseJSON)
     </section>
 
     <div v-else class="text-muted-foreground py-8 text-center flex flex-col gap-2 items-center">
-      <span class="i-uil-folder-times size-24"></span>
+      <UilFolderTimes class="size-24" />
       <p>No data available. Upload a JSON/CSV file to preview and export.</p>
     </div>
   </section>

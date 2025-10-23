@@ -49,8 +49,8 @@
 }
 
 * {
-  border-color: var(--border);
   outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+  border-color: var(--border);
   transition: all 270ms ease-out;
 }
 
@@ -65,12 +65,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
-html {
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }

@@ -26,8 +26,12 @@ export default {
     }),
     AutoImport({
       dts: 'src/auto-imports.d.ts',
-      imports: ['vue', 'vue-router', { '@vueuse/core': ['useColorMode'] }],
-      dirs: ['src/composables'],
+      imports: [
+        'vue',
+        'vue-router',
+        { '@vueuse/core': ['useColorMode'], '@unhead/vue': ['useSeoMeta'] },
+      ],
+      dirs: ['src/utils'],
       viteOptimizeDeps: true,
       vueTemplate: true,
     }),

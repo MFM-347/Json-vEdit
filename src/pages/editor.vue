@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { useSeoMeta } from '@unhead/vue'
-import { watch } from 'vue'
-import { json, parsedData, hasError, parseJSON, onFileUpload } from '@/utils'
-import type { DataRow } from '@/utils'
-
 useSeoMeta({
   title: 'JSON vEdit – Online JSON & CSV Editor',
   description:
@@ -60,13 +55,13 @@ watch(json, parseJSON)
       <label class="font-medium mb-3 block" for="fileUpload"> Upload a JSON/CSV File </label>
       <input
         id="fileUpload"
+        class="sr-only"
         type="file"
         accept=".json,.csv"
-        class="sr-only"
         @change="onFileUpload"
       />
-      <label for="fileUpload" class="btn btn-primary">
-        <span class="i-uil-upload"></span>
+      <label class="btn btn-primary" for="fileUpload">
+        <UilUpload />
         Choose File
       </label>
       <p id="fileHelp" class="text-sm text-muted-foreground mt-2">
@@ -86,18 +81,18 @@ watch(json, parseJSON)
       <div
         class="mx-auto bg-background-subtle flex flex-row gap-1 w-fit top-0 sticky z-10 backdrop-blur-sm"
       >
-        <button class="btn btn-ghost" @click="addItem" aria-label="Add a new row">
-          <span class="i-uil-plus"></span> Add New Row
+        <button class="btn btn-ghost" aria-label="Add a new row" @click="addItem">
+          <UilPlus /> Add New Row
         </button>
         <button
           class="btn btn-ghost"
-          @click="resetDocument"
           aria-label="Reset document to empty rows"
+          @click="resetDocument"
         >
-          <span class="i-uil-refresh"></span> Reset Doc
+          <UilRefresh class="mr-1" /> Reset Doc
         </button>
-        <button class="btn btn-ghost" @click="exportJSON" aria-label="Export data as JSON">
-          <span class="i-uil-download-alt"></span> Export JSON
+        <button class="btn btn-ghost" aria-label="Export data as JSON" @click="exportJSON">
+          <UilDownloadAlt class="mr-1" /> Export JSON
         </button>
       </div>
       <div class="mt-4 max-h-[70vh] overflow-auto">
@@ -140,7 +135,7 @@ watch(json, parseJSON)
                   :aria-label="`Delete row ${i + 1}`"
                   @click="confirmDelete(i)"
                 >
-                  <span class="i-uil-trash"></span>
+                  <UilTrash />
                 </button>
               </td>
             </tr>
@@ -149,7 +144,7 @@ watch(json, parseJSON)
       </div>
     </section>
     <div v-else class="text-muted-foreground py-8 text-center flex flex-col gap-2 items-center">
-      <span class="i-uil-folder-times size-24"></span>
+      <UilFolderTimes class="size-24" />
       <p>No data available. Upload a JSON/CSV file to begin.</p>
     </div>
   </section>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useSeoMeta } from '@unhead/vue'
-
 useSeoMeta({
   title: 'About - JSON vEdit',
   description:
@@ -17,8 +15,8 @@ useSeoMeta({
 <template>
   <div class="container py-16 min-h-screen">
     <h1 class="title my-4">About</h1>
-    <section id="intro" aria-labelledby="intro-heading" class="mb-8">
-      <h2 class="sub-title" id="intro-heading">What This App Does</h2>
+    <section id="intro" class="mb-8" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" class="sub-title">What This App Does</h2>
       <p class="text-base leading-relaxed">
         JSON vEdit allows you to effortlessly edit, explore, and convert JSON and CSV data. Enjoy an
         interactive visualization experience that simplifies data analysis and manipulation. Upload,
@@ -26,13 +24,13 @@ useSeoMeta({
         interface.
       </p>
     </section>
-    <section id="about-author" aria-labelledby="author-heading" class="mb-8">
-      <h2 class="sub-title" id="author-heading">About the Author</h2>
+    <section id="about-author" class="mb-8" aria-labelledby="author-heading">
+      <h2 id="author-heading" class="sub-title">About the Author</h2>
       <p class="text-base leading-relaxed">
         Developed by
         <a
-          href="https://github.com/MFM-347"
           class="link-primary underline decoration-primary/20 underline-offset-2 hover:decoration-primary"
+          href="https://github.com/MFM-347"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -41,8 +39,8 @@ useSeoMeta({
         intuitive, high-performance web apps that enhance productivity and developer workflows.
       </p>
     </section>
-    <section id="powered-by" aria-labelledby="powered-heading" class="mb-8">
-      <h2 class="sub-title" id="powered-heading">Tech Stack</h2>
+    <section id="powered-by" class="mb-8" aria-labelledby="powered-heading">
+      <h2 id="powered-heading" class="sub-title">Tech Stack</h2>
       <ul class="text-base leading-relaxed list-disc list-inside space-y-2">
         <li>
           <strong>Vite.js</strong> – A lightning-fast build tool offering instant hot module

@@ -28,48 +28,48 @@ useHead({
 
 <style scoped>
 .a {
-  max-width: 100vw;
-  min-height: 100vh;
   display: grid;
   place-items: center;
+  max-width: 100vw;
+  min-height: 100vh;
 }
 
 .contain {
   position: relative;
+  transition: all 0.3s ease-in-out;
   margin: auto;
+  box-shadow: 0 4px 12px color-mix(in oklch, var(--primary) 16%, transparent);
+  border: 1px solid var(--accent);
+  border-radius: 1.5rem;
+  background: color-mix(in oklch, var(--accent) 90%, transparent);
+  padding: 1rem;
   width: clamp(400px, 90%, 500px);
   height: 275px;
   min-height: clamp(225px, 250px, 300px);
   max-height: 300px;
-  padding: 1rem;
   overflow: hidden;
-  background: color-mix(in oklch, var(--accent) 90%, transparent);
-  border: 1px solid var(--accent);
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 12px color-mix(in oklch, var(--primary) 16%, transparent);
-  transition: all 0.3s ease-in-out;
 }
 
 .contain:hover {
-  border-color: color-mix(in oklch, var(--primary) 72%, transparent);
-  box-shadow: 0 8px 20px color-mix(in oklch, var(--primary) 24%, transparent);
   transform: scale(1.02);
+  box-shadow: 0 8px 20px color-mix(in oklch, var(--primary) 24%, transparent);
+  border-color: color-mix(in oklch, var(--primary) 72%, transparent);
 }
 
 .window-controls {
+  display: flex;
   position: absolute;
   top: 16px;
   left: 16px;
-  display: flex;
   gap: 8px;
   background: color-mix(in oklch, var(--accent) 90%, transparent);
 }
 
 .dot {
+  transition: transform 0.2s;
+  border-radius: 50%;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  transition: transform 0.2s;
 }
 
 .dot:hover {
@@ -93,8 +93,8 @@ useHead({
   max-height: 12rem;
   overflow: hidden;
   font-size: clamp(20px, 1.2vw, 24px);
-  font-family: monospace;
   line-height: 1.5;
+  font-family: monospace;
 }
 
 .keyword {
